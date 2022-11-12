@@ -3,6 +3,7 @@ import { WalletProvider } from "./lib/wallet/";
 import { Layout } from "./components/Layout/";
 import { SpinSwap } from "./pages/spinSwap";
 import { keyStores } from "./lib/coreNear";
+import { SignedIn } from "./components/SignedIn";
 
 const connectionConfig = {
   networkId: "testnet",
@@ -17,7 +18,9 @@ function App() {
   return (
     <WalletProvider config={connectionConfig}>
       <Layout>
-        <SpinSwap />
+        <SignedIn>
+          <SpinSwap />
+        </SignedIn>
       </Layout>
     </WalletProvider>
   );
